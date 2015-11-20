@@ -13,23 +13,35 @@
       <input type="submit" value="Submit">
     </form>		
   </body>
-
   <script>
-    $.ajax({
-      crossDomain: true,
+  $.ajax({
       type:"GET",
-      contentType: "application/json, text/javascript",
-      header: {'Access-Control-Allow-Origin': 'http://bossnaga.github.io/shop/'
-      },
-      origin: "http://bossnaga.github.io/shop/",
-      url: 'http://ufc-data-api.ufc.com/api/v1/us/fighter/260',
-      dataType: 'json',
+      url: 'http://ufc-data-api.ufc.com/api/v1/us/fighters',
+      // contentType: "application/json",
+      // headers: {'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Method': '*'
+      // },
+      // xhrFields: {
+      //       withCredentials: true
+      //   },
+      // origin: "http://ufc-data-api.ufc.com/api/v1/us/fighters",
+      // dataType: 'json',
       success: function(response) {
         console.log(response);
       },
       error: function(error, mes) {
         console.log('ERROR:', mes);
       }
+
+  
     });
-  </script
+
+
+
+    // curl GET -H "Origin: http://bossnaga.github.io/shop/" \
+    //   -H "Content-type: application/json" \
+    //   -H "Access-Control-Allow-Origin: *" \
+    //   http://ufc-data-api.ufc.com/api/v1/us/fighters
+
+  </script>
 </html>
