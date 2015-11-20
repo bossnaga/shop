@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Boo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script src="./js/index.js" defer></script>
   </head>
 
@@ -12,4 +13,23 @@
       <input type="submit" value="Submit">
     </form>		
   </body>
+
+  <script>
+    $.ajax({
+      crossDomain: true,
+      type:"GET",
+      contentType: "application/json, text/javascript",
+      header: {'Access-Control-Allow-Origin': 'http://bossnaga.github.io/shop/'
+      },
+      origin: "http://bossnaga.github.io/shop/",
+      url: 'http://ufc-data-api.ufc.com/api/v1/us/fighter/260',
+      dataType: 'json',
+      success: function(response) {
+        console.log(response);
+      },
+      error: function(error, mes) {
+        console.log('ERROR:', mes);
+      }
+    });
+  </script
 </html>
